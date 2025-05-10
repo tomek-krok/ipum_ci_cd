@@ -8,7 +8,9 @@ jobs:
    integration:
       name: checks_and_tests
       runs-on: ubuntu-latest
-      working-directory: ./polish-sentiment-app
+      defaults:
+          run:
+            working-directory: ./polish-sentiment-app
       steps:
          - name: Checkout code repo
            # this action clones current repository to the VM where our job is running
