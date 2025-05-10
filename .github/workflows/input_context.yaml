@@ -1,0 +1,17 @@
+# inputs context
+name: Inputs context example
+on:
+  workflow_dispatch:
+    inputs:
+      to_deploy:
+        type: boolean
+        default: false
+        description: 'Deploy app to production after integration and build step?'
+
+jobs:
+  show-input:
+    runs-on: ubuntu-latest
+    steps:
+       - name: Inputs contexts
+         run: |
+          echo "Deploy?: ${{ inputs.to_deploy }}"
